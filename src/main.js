@@ -2,6 +2,8 @@
 var Hapi = require('hapi');
 
 var server = new Hapi.Server();
+var games = require('./games.json');
+console.log(games);
 
 server.connection({port: 3000});
 
