@@ -15,6 +15,14 @@ server.route({
     }
 });
 
+server.route( {
+    method: 'GET',
+    path: '/games',
+    handler: function (request, reply) {
+        reply(games);
+    }
+});
+
 server.start(function (err) {
     if (err) {
         throw err;
