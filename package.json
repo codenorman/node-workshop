@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "boom": "4.1.0",
     "hapi": "15.1.1",
     "joi": "9.1.0",
     "lodash": "4.16.4"

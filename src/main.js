@@ -2,6 +2,7 @@
 var Hapi = require('hapi');
 var _ = require('lodash');
 var Joi = require('joi');
+var Boom = require('boom');
 var server = new Hapi.Server();
 var games = require('./games.json');
 console.log(games);
@@ -30,6 +31,9 @@ server.route({
     handler: function (request, reply) {
         // var game = _.find(games, {'id': parseInt(request.params.id, 10)});
         var game = _.find(games, {'id': request.params.id});
+        if (!game){
+            return reply(Boom.notFound('game id not found'));
+        }
         reply(game);
     },
     config: {
