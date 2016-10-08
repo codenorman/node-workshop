@@ -1,6 +1,6 @@
 'use strict';
 var Hapi = require('hapi');
-
+var _ = require('lodash');
 var server = new Hapi.Server();
 var games = require('./games.json');
 console.log(games);
@@ -20,6 +20,15 @@ server.route( {
     path: '/games',
     handler: function (request, reply) {
         reply(games);
+    }
+});
+
+server.route( {
+    method: 'GET',
+    path: '/games/{id}',
+    handler: function (request, reply) {
+        var game = _.find(games, {'id': parseInt(request.params.id, 10)});
+        reply(game);
     }
 });
 

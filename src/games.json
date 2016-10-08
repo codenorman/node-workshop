@@ -1,16 +1,14 @@
-{
-  "games": [
-    {
-      "id": 1,
-      "name": "Tic-Tac-Toe"
-    },
-    {
-      "id": 2,
-      "name": "Checkers"
-    },
-    {
-      "id": 3,
-      "name": "Chess"
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "name": "Tic-Tac-Toe"
+  },
+  {
+    "id": 2,
+    "name": "Checkers"
+  },
+  {
+    "id": 3,
+    "name": "Chess"
+  }
+]
