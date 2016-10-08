@@ -1,6 +1,7 @@
 'use strict';
 var Hapi = require('hapi');
 var _ = require('lodash');
+var Joi = require('joi');
 var server = new Hapi.Server();
 var games = require('./games.json');
 console.log(games);
@@ -15,7 +16,7 @@ server.route({
     }
 });
 
-server.route( {
+server.route({
     method: 'GET',
     path: '/games',
     handler: function (request, reply) {
@@ -23,12 +24,20 @@ server.route( {
     }
 });
 
-server.route( {
+server.route({
     method: 'GET',
     path: '/games/{id}',
     handler: function (request, reply) {
-        var game = _.find(games, {'id': parseInt(request.params.id, 10)});
+        // var game = _.find(games, {'id': parseInt(request.params.id, 10)});
+        var game = _.find(games, {'id': request.params.id});
         reply(game);
+    },
+    config: {
+        validate: {
+            params: {
+                id: Joi.number().integer().min(1).required()
+            }
+        }
     }
 });
 
