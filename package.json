@@ -4,15 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon --debug src/main.js",
+    "test": "node jasmine-runner.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "boom": "4.1.0",
     "hapi": "15.1.1",
+    "inert": "4.0.2",
     "joi": "9.1.0",
-    "lodash": "4.16.4"
+    "lodash": "4.16.4",
+    "lout": "9.2.0",
+    "vision": "4.1.0"
+  },
+  "devDependencies": {
+    "jasmine": "2.5.2",
+    "jasmine-spec-reporter": "2.7.0",
+    "nodemon": "1.11.0"
   }
 }
