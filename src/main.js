@@ -14,12 +14,13 @@ server.route({
 });
 
 server.register([{
-    register: require('./games'),
-    options: {}
+      register: require('./games'),
+      options: {}
     },
-    require('vision'), require('inert'), { register: require('lout') }
-], function(err){
-    if(err){
+
+    require('vision'), require('inert'), {register: require('lout')},
+], function (err) {
+    if (err) {
         throw err;
     }
 });

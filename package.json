@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "boom": "4.1.0",
+    "firebase-admin": "^4.0.4",
     "hapi": "15.1.1",
     "inert": "4.0.2",
     "joi": "9.1.0",

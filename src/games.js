@@ -3,6 +3,7 @@ var _ = require('lodash');
 var Joi = require('joi');
 var Boom = require('boom');
 var games = require('./games.json');
+var gamesDB = require('./games-db');
 
 exports.register = function (server, options, next) {
 
@@ -10,6 +11,9 @@ exports.register = function (server, options, next) {
         method: 'GET',
         path: '/games',
         handler: function (request, reply) {
+            console.log('get games');
+            var games = gamesDB.gamesList();
+            console.log(games);
             return reply(games);
         }
     });
