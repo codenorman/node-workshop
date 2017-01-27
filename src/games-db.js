@@ -46,7 +46,6 @@ games.once('value').then(function (snapshot) {
 var addPlayer = function(player, name){
     var newPlayer = players.child(player);
     newPlayer.push(name);
-
 };
 
 games.on('child_added', function (data) {
@@ -56,7 +55,7 @@ games.on('child_added', function (data) {
 });
 
 var addGame = function (name, minPlayers, maxPlayers) {
-    console.log('addgame', name)
+    console.log('addgame', name);
     var newGame = games.child(name);
     newGame.set({minPlayers: minPlayers, maxPlayers: maxPlayers});
 };

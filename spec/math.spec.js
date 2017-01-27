@@ -6,6 +6,9 @@ describe ('math', function(){
         });
         it('2+3 should equal 5', function () {
             expect(math.add(2, 3)).toEqual(5);
-        })
+        });
+        it('2+ -3 should equal -1', function () {
+            expect(math.add(2, -3)).toEqual(-1);
+        });
     });
 });
